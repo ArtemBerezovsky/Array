@@ -7,6 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "Human.h"
+#import "Cyclist.h"
+#import "Runner.h"
+#import "Swimmer.h"
+#import "Jumper.h"
+#import "Animal.h"
+#import "Dog.h"
+#import "Cat.h"
+
 
 @interface AppDelegate ()
 
@@ -16,7 +25,38 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    //initilization Human
+    Human* human = [[Human alloc] init];
+    Cyclist* cyclist = [[Cyclist alloc] init];
+    Runner* runner = [[Runner alloc] init];
+    Swimmer* swimmer = [[Swimmer alloc] init];
+    Jumper* jumper = [[Jumper alloc] init];
+    swimmer.grouth = 66,66;
+    
+    //initilization Animal
+    Dog* dog = [[Dog alloc] init];
+    Cat* cat = [[Cat alloc] init];
+    
+    NSArray* array = [NSArray arrayWithObjects:human,cyclist,runner,swimmer,jumper, nil];
+    NSArray* arrayAnimal = [NSArray arrayWithObjects:dog,cat, nil];
+
+    
+    //maincode
+    
+    
+    //[human jobCycle:array];
+    
+    //[human jobCycleReturn:array];
+    
+    [human star:array
+               :arrayAnimal];
+    
+    
+    
+    
+    
+    
     return YES;
 }
 
