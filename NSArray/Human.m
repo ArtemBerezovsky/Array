@@ -22,7 +22,9 @@ const NSString* kName = @"defaultHumanName";
     self = [super init];
     if(self!=nil)
     {
+        //Аналагично Animal
         _name = kName;
+        // чтобы не было варнингов юзай простые типы без указателей или пиши перед именем переменной *
         _weight = 67,9;
         _grouth = 1,99;
         _gender = genderMale;
@@ -56,6 +58,7 @@ const NSString* kName = @"defaultHumanName";
         
                 if([human isKindOfClass:[Jumper class]])
                 {
+                    //вертикальное выравнивание поехало
             Jumper* jumper = (Jumper*) human;
             NSLog(@"lastname %@" ,jumper.lastName);
                 }
@@ -63,7 +66,7 @@ const NSString* kName = @"defaultHumanName";
         }
         else if ([human isKindOfClass:[Animal class]])
             {
-                
+// задания не читал, но выглядит странно, чтьо человек стал зверем. По коду не видно, чтобы Анимал был дочерним классом человека. Что-то тут не так в логике
                 Animal* animal = (Animal*) human;
                 NSLog(@"THIS IS ANIMAL!!!");
                 NSLog(@"color %@", animal.color);

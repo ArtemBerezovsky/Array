@@ -27,6 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     //initilization Human
+// Правильно писать ТИП_ПЕРЕМЕННОЙ *ИМЯ_ПЕРЕМЕННОЙ (знак указателя приписывается переменной, а не типу)
     Human* human = [[Human alloc] init];
     Cyclist* cyclist = [[Cyclist alloc] init];
     Runner* runner = [[Runner alloc] init];
@@ -38,6 +39,7 @@
     Dog* dog = [[Dog alloc] init];
     Cat* cat = [[Cat alloc] init];
     
+// после запятых и двоеточий следует писать пробелы для большей читаемости
     NSArray* array = [NSArray arrayWithObjects:human,cyclist,runner,swimmer,jumper, nil];
     NSArray* arrayAnimal = [NSArray arrayWithObjects:dog,cat, nil];
 
@@ -49,6 +51,7 @@
     
     //[human jobCycleReturn:array];
     
+// совершенно непонятная функция. Непонятно что делает, непонятно что передавать вторым аргументом. Неогбходимо переназвать, осбенно уделить внимание второму аргументу
     [human star:array
                :arrayAnimal];
     

@@ -12,7 +12,7 @@
 
 const NSString* kColorDog = @"Black";
 
-
+// все тоже сакмое что и в  Animal
 -(id) init
 {
     self = [super init];
