@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSString* lastName;
 
 
--(void) movement;
+
 
 
 @end

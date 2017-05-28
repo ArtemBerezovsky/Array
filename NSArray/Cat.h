@@ -8,9 +8,8 @@
 
 #import "Animal.h"
 
-@interface Cat : Animal
+@interface Cat: Animal
 
 
--(void) movementAnimal;
 
 @end

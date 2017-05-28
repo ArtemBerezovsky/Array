@@ -10,6 +10,6 @@
 
 @interface Swimmer : Human
 
--(void) movement;
+
 
 @end

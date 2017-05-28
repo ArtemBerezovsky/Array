@@ -11,6 +11,5 @@
 @interface Runner : Human
 
 
--(void) movement;
 
 @end

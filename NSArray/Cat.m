@@ -12,20 +12,20 @@
 
 const NSString* kColorCat = @"Grey";
 
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self != nil)
     {
         self.color = kColorCat;
-        self.size = Small;
+        self.size = SizeAnimalSmall;
     }
     
     return self;
 }
 
 
--(void) movementAnimal
+- (void) movementAnimal
 {
     NSLog(@"movementCAT");
 }

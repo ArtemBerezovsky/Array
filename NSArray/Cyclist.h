@@ -8,10 +8,9 @@
 
 #import "Human.h"
 
-@interface Cyclist : Human
+@interface Cyclist: Human
 
-// аналогично, метод есть у родительского класса, писать в .h файле не нужно
--(void) movement;
+
 
 @end
  

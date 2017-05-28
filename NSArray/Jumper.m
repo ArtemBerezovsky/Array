@@ -12,12 +12,12 @@
 @implementation Jumper
 
 #pragma mark - const
-const NSString* kNameJumper = @"defaultJumperName";
-const NSString* kLastName = @"defaultLastName";
+const NSString *kNameJumper = @"defaultJumperName";
+const NSString *kLastName = @"defaultLastName";
 
 @synthesize lastName = m_lastName;
 
--(id) init
+-(instancetype) init
 {
     self = [super init];
     if(self!=nil)
@@ -32,7 +32,7 @@ const NSString* kLastName = @"defaultLastName";
     return self;
 }
 
--(void) movement
+- (void) movement
 {
     [super movement];
     NSLog(@"Movenment Jumper");

@@ -17,25 +17,33 @@
 //}
 // Это позволит через месц вспомнить зачем ты делал это перечисление
 
-typedef enum
+/*typedef enum
 {
     Big,
     Small,
     defaultSize
     
 }SizeAnimal;
+*/
 
-@interface Animal : NSObject
+typedef NS_ENUM (NSUInteger, SizeAnimal)
+{
+    SizeAnimalBig,
+    SizeAnimalSmall,
+    SizeAnimalDefault
+};
+
+@interface Animal: NSObject
 
 //  для указателей в .h файлах обязательно указываем Nullability параметр
-@property (nonatomic, strong) NSString* color;
+@property (nonatomic, strong, nullable) NSString* color;
 @property (nonatomic, assign) SizeAnimal size;
 
 
 // пробел после минуса
--(void) movementAnimal;
+- (void) movementAnimal;
 
 // пробел после Типа и двоеточия
-- (NSString*) convertToStringAnimal:(SizeAnimal) whatAnimal;
+- (NSString*) convertToStringAnimal: (SizeAnimal) whatAnimal;
 
 @end

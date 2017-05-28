@@ -13,7 +13,7 @@
 const NSString* kNameSwimmer = @"defaultSwimmerName";
 
 
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self!=nil)
@@ -30,7 +30,7 @@ const NSString* kNameSwimmer = @"defaultSwimmerName";
 
 
 
--(void) movement
+- (void) movement
 {
     NSLog(@"Movenment Swimmer");
 }

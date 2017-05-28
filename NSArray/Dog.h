@@ -8,9 +8,8 @@
 
 #import "Animal.h"
 
-@interface Dog : Animal
 
-//  необязательно. Такой же метод есть у родителя и ты его унаследовал
--(void) movementAnimal;
+@interface Dog: Animal
+
 
 @end

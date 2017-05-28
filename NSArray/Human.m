@@ -14,10 +14,10 @@
 
 @implementation Human
 
-const NSString* kName = @"defaultHumanName";
+const NSString *kName = @"defaultHumanName";
 
 
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self!=nil)
@@ -25,8 +25,9 @@ const NSString* kName = @"defaultHumanName";
         //Аналагично Animal
         _name = kName;
         // чтобы не было варнингов юзай простые типы без указателей или пиши перед именем переменной *
-        _weight = 67,9;
-        _grouth = 1,99;
+        //Не понимаю я почему варнинги на простых типах.Херня какая то (С)Артем
+        _weight = 67.9;
+        _grouth = 1.99;
         _gender = genderMale;
         
     }
@@ -34,52 +35,53 @@ const NSString* kName = @"defaultHumanName";
 }
 
 
--(void) movement
+- (void) movement
 {
     NSLog(@"Movenment human");
 }
 
 
 
--(void) jobCycle: (NSArray*) array
+- (void) jobCycle: (NSArray*) array
 
 {
     for(NSInteger i = 0; [array count] > i; i++)
     {
-        Human* human = [array objectAtIndex:i];
+        Human *human = [array objectAtIndex:i];
         if([human isKindOfClass:[Human class]])
         {
         NSLog(@"THIS IS HUMAN!!!");
         NSLog(@"name %@", human.name);
-        NSLog(@"weight %d", human.weight);
+        NSLog(@"weight %f", human.weight);
         NSLog(@"grouth %d", human.grouth);
         NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
         NSLog(@"index = %lu", (unsigned long)[array indexOfObject:human]);
         
-                if([human isKindOfClass:[Jumper class]])
-                {
+            if([human isKindOfClass:[Jumper class]])
+            {
                     //вертикальное выравнивание поехало
-            Jumper* jumper = (Jumper*) human;
+            Jumper *jumper = (Jumper*) human;
             NSLog(@"lastname %@" ,jumper.lastName);
-                }
+            }
         [human movement];
         }
         else if ([human isKindOfClass:[Animal class]])
-            {
+        {
 // задания не читал, но выглядит странно, чтьо человек стал зверем. По коду не видно, чтобы Анимал был дочерним классом человека. Что-то тут не так в логике
-                Animal* animal = (Animal*) human;
-                NSLog(@"THIS IS ANIMAL!!!");
-                NSLog(@"color %@", animal.color);
-                NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
-                [animal movementAnimal];
-            }
+//  не знаю как приведение типов сделать. Логика в следующем есть на входе массив, в нем разные данные. Нужно что бы для класса человек выводились свои свойста. а когда натыкаемся на класс животное другие. Соответственно присвоение объекта массива указателю Human*human, дает перебрать массив по объектам, но они все становятся с типом Human. А у Human нет свойств Animal, соответсвенно делал какое то приведение типов к Animal, что бы компилятор не ругался типо я не вижу свойств у объекта. Просто я не понимаю как это сделать и сделал , то что видел в уроке, правда там это сделано внутри одной "ветки классов", т.е один класс родитель и все остальные дочерние. Логика в коде сломана, но я не знаю как это сделать по другому. Создавать объект с типом NS_Object?
+        Animal *animal = (Animal*) human;
+        NSLog(@"THIS IS ANIMAL!!!");
+        NSLog(@"color %@", animal.color);
+        NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
+        [animal movementAnimal];
+        }
     }
     
 }
 
 
--(void) star: (NSArray*) array
-            : (NSArray*) arrayAnmal
+- (void) outputInTurnOfObjectsFromArray: (NSArray*) array
+                              nextArray: (NSArray*) arrayAnmal
 {
     NSInteger maxCount;
     NSInteger minCount;
@@ -98,54 +100,31 @@ const NSString* kName = @"defaultHumanName";
     for (NSInteger i = 0; minCount > i; i++)
         
     {   //HumanGO
-        Human* human = [array objectAtIndex:i];
-        if([human isKindOfClass:[Human class]])
-        {
-            NSLog(@"THIS IS HUMAN!!!");
-            NSLog(@"name %@", human.name);
-            NSLog(@"weight %d", human.weight);
-            NSLog(@"grouth %d", human.grouth);
-            NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
-            NSLog(@"index = %lu", (unsigned long)[array indexOfObject:human]);
-            
-            if([human isKindOfClass:[Jumper class]])
-            {
-                Jumper* jumper = (Jumper*) human;
-                NSLog(@"lastname %@" ,jumper.lastName);
-            }
-            [human movement];
-        }
-        else if ([human isKindOfClass:[Animal class]])
-        {
-            
-            Animal* animal = (Animal*) human;
-            NSLog(@"THIS IS ANIMAL!!!");
-            NSLog(@"color %@", animal.color);
-            NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
-            [animal movementAnimal];
-        }
+        Human *human = [array objectAtIndex:i];
+        [human outputHuman:human];
+        
         //AnimalGO
-        Animal* animalGO = [arrayAnmal objectAtIndex:i];
-        if([animalGO isKindOfClass:[Human class]])
+        Animal *animalGO = [arrayAnmal objectAtIndex:i];
+        if([animalGO isKindOfClass: [Human class]])
         {
             NSLog(@"THIS IS HUMAN!!!");
             NSLog(@"name %@", human.name);
-            NSLog(@"weight %d", human.weight);
-            NSLog(@"grouth %d", human.grouth);
-            NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
+            NSLog(@"weight %f", human.weight);
+            NSLog(@"grouth %f", human.grouth);
+            NSLog(@"gender %@", [human convertToString: (Gender) human.gender]);
             NSLog(@"index = %lu", (unsigned long)[array indexOfObject:human]);
             
-            if([human isKindOfClass:[Jumper class]])
+            if([human isKindOfClass: [Jumper class]])
             {
-                Jumper* jumper = (Jumper*) human;
+                Jumper *jumper = (Jumper*) human;
                 NSLog(@"lastname %@" ,jumper.lastName);
             }
             [human movement];
         }
-        else if ([animalGO isKindOfClass:[Animal class]])
+        else if ([animalGO isKindOfClass: [Animal class]])
         {
             
-            Animal* animal = (Animal*) animalGO;
+            Animal *animal = (Animal*) animalGO;
             NSLog(@"THIS IS ANIMAL!!!");
             NSLog(@"color %@", animal.color);
             NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
@@ -158,34 +137,45 @@ const NSString* kName = @"defaultHumanName";
     {
         NSLog(@"index i = %li",(long)i);
         //HumanGO
-        Human* human = [array objectAtIndex:i];
-        if([human isKindOfClass:[Human class]])
-        {
-            NSLog(@"THIS IS HUMAN!!!");
-            NSLog(@"name %@", human.name);
-            NSLog(@"weight %d", human.weight);
-            NSLog(@"grouth %d", human.grouth);
-            NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
-            NSLog(@"index = %lu", (unsigned long)[array indexOfObject:human]);
-            
-            if([human isKindOfClass:[Jumper class]])
-            {
-                Jumper* jumper = (Jumper*) human;
-                NSLog(@"lastname %@" ,jumper.lastName);
-            }
-            [human movement];
-        }
-        else if ([human isKindOfClass:[Animal class]])
-        {
-            
-            Animal* animal = (Animal*) human;
-            NSLog(@"THIS IS ANIMAL!!!");
-            NSLog(@"color %@", animal.color);
-            NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
-            [animal movementAnimal];
-        }
-
+        Human *human = [array objectAtIndex:i];
+        [human outputHuman:human];
     }
+}
+
+
+
+- (void) outputHuman: (Human*) human
+{
+    if([human isKindOfClass: [Human class]])
+    {
+        NSLog(@"THIS IS HUMAN!!!");
+        NSLog(@"name %@", human.name);
+        NSLog(@"weight %f", human.weight);
+        NSLog(@"grouth %f", human.grouth);
+        NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
+        
+        if([human isKindOfClass:[Jumper class]])
+        {
+            Jumper *jumper = (Jumper*) human;
+            NSLog(@"lastname %@" ,jumper.lastName);
+        }
+        [human movement];
+    }
+    else if ([human isKindOfClass: [Animal class]])
+    {
+        
+        Animal *animal = (Animal*) human;
+        NSLog(@"THIS IS ANIMAL!!!");
+        NSLog(@"color %@", animal.color);
+        NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal) animal.size]);
+        [animal movementAnimal];
+    }
+
+}
+
+- (void) outputAnimal: (Animal*) animal
+{
+    
 }
 
 
@@ -194,17 +184,17 @@ const NSString* kName = @"defaultHumanName";
 
 
 
--(void) jobCycleReturn: (NSArray*) array
+- (void) jobCycleReturn: (NSArray*) array
 {
     for(NSInteger i = [array count]-1; i >= 0; i--)
     {
-        Human* human = [array objectAtIndex:i];
+        Human *human = [array objectAtIndex: i];
         NSLog(@"objectAdress %@", human);
         NSLog(@"name %@", human.name);
-        NSLog(@"weight %d", human.weight);
-        NSLog(@"grouth %d", human.grouth);
-        NSLog(@"gender %@", [human convertToString:(Gender) human.gender]);
-        NSLog(@"index = %lu", (unsigned long)[array indexOfObject:human]);
+        NSLog(@"weight %f", human.weight);
+        NSLog(@"grouth %f", human.grouth);
+        NSLog(@"gender %@", [human convertToString: (Gender) human.gender]);
+        NSLog(@"index = %lu", (unsigned long)[array indexOfObject: human]);
         [human movement];
     }
     
@@ -213,19 +203,24 @@ const NSString* kName = @"defaultHumanName";
 
 
 
-- (NSString*) convertToString:(Gender) whatGender {
+- (NSString*) convertToString: (Gender) whatGender
+{
     NSString *result = nil;
-    
-    switch(whatGender) {
+    switch (whatGender)
+    {
         case genderFamele:
-            result = @"genderFamale";
+        { result = @"genderFamale";
             break;
+        }
         case genderMale:
+        {
             result = @"genderMale";
             break;
-       
+        }
         default:
+        {
             result = @"unknown";
+        }
     }
     
     return result;

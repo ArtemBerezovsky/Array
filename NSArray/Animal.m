@@ -8,44 +8,52 @@
 
 #import "Animal.h"
 
-
+// у тебя переменная одинакова для всех классов, поэтому её моджно вынести за имплементацию и сказать, что она static
+// поправил
+static const NSString* kColor = @"defautlColor";
 
 @implementation Animal
 
 
-// у тебя переменная одинакова для всех классов, поэтому её моджно вынести за имплементацию и сказать, что она static
-const NSString* kColor = @"defautlColor";
 
 // вместо  id лучше испольщовать instance type
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self != nil)
     {
 // Ошибка слева указатель несозданный до этого, а справа значение. Значение не будет сохранено, сначала создай объект, а потом присвой его указателю
+// не понял нифига в чем ошибка, как я могу создать объект если я его создаю с помощью этого инита с параметрами свойств?
         _color = kColor;
-        _size = defaultSize;
+        _size = SizeAnimalDefault;
     }
     
     return self;
 }
 
 // соблюдай код стайл, выше у тебя есть пернос скобки на новую строку, а тут нету, точки и двоеточия тоже поправь с помощью пробелов
-- (NSString*) convertToStringAnimal:(SizeAnimal) whatAnimal {
+- (NSString*) convertToStringAnimal: (SizeAnimal) whatAnimal
+{
     NSString *result = nil;
-    
-    switch(whatAnimal) {
+    switch(whatAnimal)
+    {
             
 // если case  включает несколько строк, то лучше использовать скобки фигурные для обозначения блока  { строки }
-        case Big:
+        case SizeAnimalBig :
+        {
             result = @"BIG";
             break;
-        case Small:
+        }
+           
+        case SizeAnimalSmall :
+        {
             result = @"Small";
             break;
-            
-        default:
+        }
+        default :
+        {
             result = @"defaultSize";
+        }
     }
     
     return result;
@@ -53,7 +61,7 @@ const NSString* kColor = @"defautlColor";
 
 
 
--(void) movementAnimal
+- (void) movementAnimal
 {
     NSLog(@"movementAnimal");
 }

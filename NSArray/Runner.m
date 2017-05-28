@@ -13,7 +13,7 @@
 const NSString* kNameRunner = @"defaultRunnerName";
 
 
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self!=nil)
@@ -30,7 +30,7 @@ const NSString* kNameRunner = @"defaultRunnerName";
 
 
 
--(void) movement
+- (void) movement
 {
     NSLog(@"Movenment Runner");
 }

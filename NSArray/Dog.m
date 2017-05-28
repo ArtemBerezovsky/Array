@@ -13,19 +13,19 @@
 const NSString* kColorDog = @"Black";
 
 // все тоже сакмое что и в  Animal
--(id) init
+- (instancetype) init
 {
     self = [super init];
     if(self != nil)
     {
         self.color = kColorDog;
-        self.size = Big;
+        self.size = SizeAnimalBig;
     }
     
     return self;
 }
 
--(void) movementAnimal
+- (void) movementAnimal
 {
     NSLog(@"movementDOG");
 }

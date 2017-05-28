@@ -15,27 +15,28 @@ typedef enum
     genderFamele
 }Gender;
 
-@interface Human : NSObject
+@interface Human: NSObject
 
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) Gender gender;
 //  Почему указатели? Это же протые типы данных, ну а если хочешь слодные, то не используй assign, и используй разыменование указателей каждый раз
-@property (nonatomic, assign) double* weight;
-@property (nonatomic, assign) float* grouth;
+// потому что Артем косяк, и хз почему простым типам указатели пихал
+@property (nonatomic, assign) double weight;
+@property (nonatomic, assign) float grouth;
 
 
--(void) movement;
+- (void) movement;
 
 
 
-- (NSString*) convertToString:(Gender) whatGender;
+- (NSString*) convertToString: (Gender) whatGender;
 
--(void) jobCycleReturn: (NSArray*) array;
+- (void) jobCycleReturn: (NSArray*) array;
 
--(void) jobCycle: (NSArray*) array;
+- (void) jobCycle: (NSArray*) array;
 // описано в  App Delegate
--(void) star: (NSArray*) array
-            : (NSArray*) arrayAnmal;
+- (void) outputInTurnOfObjectsFromArray: (NSArray*) array
+                              nextArray: (NSArray*) arrayAnmal;
 
 @end
