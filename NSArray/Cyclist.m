@@ -10,11 +10,13 @@
 
 @implementation Cyclist
 
+//также
 const NSString* kNameCyclest = @"defaultCyclystName";
 
 - (instancetype) init
 {
     self = [super init];
+// пробелы
     if(self!=nil)
     {
     
@@ -27,7 +29,7 @@ const NSString* kNameCyclest = @"defaultCyclystName";
     return self;
 }
 
-
+//пробел
 -(void) movement
 {
     NSLog(@"Movenment Cyclist");

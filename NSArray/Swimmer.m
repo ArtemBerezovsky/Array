@@ -10,12 +10,14 @@
 
 @implementation Swimmer
 
+//также
 const NSString* kNameSwimmer = @"defaultSwimmerName";
 
 
 - (instancetype) init
 {
     self = [super init];
+//пробелы
     if(self!=nil)
     {
         

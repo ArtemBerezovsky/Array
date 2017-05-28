@@ -10,9 +10,9 @@
 
 @implementation Dog
 
+// также как в анимал лучше сделать статик
 const NSString* kColorDog = @"Black";
 
-// все тоже сакмое что и в  Animal
 - (instancetype) init
 {
     self = [super init];

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+// тут тоже переделай как в анимал
 typedef enum
 {
     genderMale, 
@@ -17,11 +17,9 @@ typedef enum
 
 @interface Human: NSObject
 
-
+// nullable параметр
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) Gender gender;
-//  Почему указатели? Это же протые типы данных, ну а если хочешь слодные, то не используй assign, и используй разыменование указателей каждый раз
-// потому что Артем косяк, и хз почему простым типам указатели пихал
 @property (nonatomic, assign) double weight;
 @property (nonatomic, assign) float grouth;
 
@@ -35,7 +33,7 @@ typedef enum
 - (void) jobCycleReturn: (NSArray*) array;
 
 - (void) jobCycle: (NSArray*) array;
-// описано в  App Delegate
+
 - (void) outputInTurnOfObjectsFromArray: (NSArray*) array
                               nextArray: (NSArray*) arrayAnmal;
 

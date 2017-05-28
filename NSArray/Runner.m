@@ -10,12 +10,14 @@
 
 @implementation Runner
 
+//также
 const NSString* kNameRunner = @"defaultRunnerName";
 
 
 - (instancetype) init
 {
     self = [super init];
+//пробелы
     if(self!=nil)
     {
         

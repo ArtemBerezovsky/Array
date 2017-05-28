@@ -42,13 +42,15 @@
     Dog *dog = [[Dog alloc] init];
     Cat *cat = [[Cat alloc] init];
     
-// после запятых и двоеточий следует писать пробелы для большей читаемости
+
     NSArray *array = [NSArray arrayWithObjects: human, cyclist, runner, swimmer, jumper, nil];
     NSArray *arrayAnimal = [NSArray arrayWithObjects: dog, cat, nil];
+// пробел
     NSMutableArray *arrayAll = [NSMutableArray arrayWithObjects:human, cyclist, runner, jumper, swimmer, cat, dog, nil];
     NSMutableArray *arrayAnimalForSort = [[NSMutableArray alloc] init];
     NSMutableArray *arrayHumanForSort = [[NSMutableArray alloc] init];
     
+// фигурные скобки как везде
     for (id object in arrayAll) {
         if ([object isKindOfClass:[Animal class]]) {
             [arrayAnimalForSort addObject:object];
@@ -58,17 +60,19 @@
         
         NSSortDescriptor *humanDescriptor = [NSSortDescriptor sortDescriptorWithKey: @"name"
                                                                           ascending: YES
+// пробелы поправь, два убрать, один добавить
                                                                            selector:@selector (localizedCaseInsensitiveCompare: )];
         NSArray *descriptor = [NSArray arrayWithObjects: humanDescriptor, nil];
         NSArray *arraySortedHuman = [arrayHumanForSort sortedArrayUsingDescriptors: descriptor];
+// пробел
         [human jobCycle:arraySortedHuman];
-        
-        
+// падало потому что не было вот этой фигурной скобки ниже
+    }
+    
         //maincode
     //[human jobCycle: array];
     //[human jobCycleReturn: array];
     
-// совершенно непонятная функция. Непонятно что делает, непонятно что передавать вторым аргументом. Неогбходимо переназвать, осбенно уделить внимание второму аргументу
     [human outputInTurnOfObjectsFromArray: array
                                 nextArray: arrayAnimal];
     

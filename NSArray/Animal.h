@@ -8,23 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// несколько лучше было бы написать следующим образом
-//typedef NS_ENUM (NSUInteger, SizeAnimal)
-//{
-//  SizeAnimalBig,
-//  SizeAnimalSmall,
-//  и так далее
-//}
-// Это позволит через месц вспомнить зачем ты делал это перечисление
-
-/*typedef enum
-{
-    Big,
-    Small,
-    defaultSize
-    
-}SizeAnimal;
-*/
 
 typedef NS_ENUM (NSUInteger, SizeAnimal)
 {
@@ -35,7 +18,7 @@ typedef NS_ENUM (NSUInteger, SizeAnimal)
 
 @interface Animal: NSObject
 
-//  для указателей в .h файлах обязательно указываем Nullability параметр
+//  nullable лучше писать самым первым, но не обязательно
 @property (nonatomic, strong, nullable) NSString *color;
 @property (nonatomic, assign) SizeAnimal size;
 @property (nonatomic, strong , nullable) NSString *animalName;
@@ -44,7 +27,7 @@ typedef NS_ENUM (NSUInteger, SizeAnimal)
 // пробел после минуса
 - (void) movementAnimal;
 
-// пробел после Типа и двоеточия
+// пробел после NSString
 - (NSString*) convertToStringAnimal: (SizeAnimal) whatAnimal;
 
 @end

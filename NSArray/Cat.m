@@ -10,11 +10,13 @@
 
 @implementation Cat
 
+// смотри сюда))
 const NSString* kColorCat = @"Grey";
 
 - (instancetype) init
 {
     self = [super init];
+    // после if лучше пробел
     if(self != nil)
     {
         self.color = kColorCat;

@@ -11,15 +11,18 @@
 
 @implementation Jumper
 
+// также
 #pragma mark - const
 const NSString *kNameJumper = @"defaultJumperName";
 const NSString *kLastName = @"defaultLastName";
 
 @synthesize lastName = m_lastName;
 
+//пробел
 -(instancetype) init
 {
     self = [super init];
+//пробелы
     if(self!=nil)
     {
         
@@ -35,7 +38,7 @@ const NSString *kLastName = @"defaultLastName";
 - (void) movement
 {
     [super movement];
-    NSLog(@"Movenment Jumper");
+    NSLog(@"Movement Jumper");
     
 }
 
