@@ -36,8 +36,9 @@ typedef NS_ENUM (NSUInteger, SizeAnimal)
 @interface Animal: NSObject
 
 //  для указателей в .h файлах обязательно указываем Nullability параметр
-@property (nonatomic, strong, nullable) NSString* color;
+@property (nonatomic, strong, nullable) NSString *color;
 @property (nonatomic, assign) SizeAnimal size;
+@property (nonatomic, strong , nullable) NSString *animalName;
 
 
 // пробел после минуса

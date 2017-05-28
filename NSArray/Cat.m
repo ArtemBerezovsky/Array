@@ -19,6 +19,7 @@ const NSString* kColorCat = @"Grey";
     {
         self.color = kColorCat;
         self.size = SizeAnimalSmall;
+        self.animalName = @"catName";
     }
     
     return self;

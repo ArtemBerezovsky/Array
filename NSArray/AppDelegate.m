@@ -32,8 +32,11 @@
     Cyclist *cyclist = [[Cyclist alloc] init];
     Runner *runner = [[Runner alloc] init];
     Swimmer *swimmer = [[Swimmer alloc] init];
-    Jumper *jumper = [[Jumper alloc] init];
     swimmer.grouth = 66.66;
+    Jumper *jumper = [[Jumper alloc] init];
+    
+ 
+    
     
     //initilization Animal
     Dog *dog = [[Dog alloc] init];
@@ -42,13 +45,27 @@
 // после запятых и двоеточий следует писать пробелы для большей читаемости
     NSArray *array = [NSArray arrayWithObjects: human, cyclist, runner, swimmer, jumper, nil];
     NSArray *arrayAnimal = [NSArray arrayWithObjects: dog, cat, nil];
-
+    NSMutableArray *arrayAll = [NSMutableArray arrayWithObjects:human, cyclist, runner, jumper, swimmer, cat, dog, nil];
+    NSMutableArray *arrayAnimalForSort = [[NSMutableArray alloc] init];
+    NSMutableArray *arrayHumanForSort = [[NSMutableArray alloc] init];
     
-    //maincode
-    
-    
+    for (id object in arrayAll) {
+        if ([object isKindOfClass:[Animal class]]) {
+            [arrayAnimalForSort addObject:object];
+        }else if([object isKindOfClass:[Human class]]){
+            [arrayHumanForSort addObject:object];
+        }
+        
+        NSSortDescriptor *humanDescriptor = [NSSortDescriptor sortDescriptorWithKey: @"name"
+                                                                          ascending: YES
+                                                                           selector:@selector (localizedCaseInsensitiveCompare: )];
+        NSArray *descriptor = [NSArray arrayWithObjects: humanDescriptor, nil];
+        NSArray *arraySortedHuman = [arrayHumanForSort sortedArrayUsingDescriptors: descriptor];
+        [human jobCycle:arraySortedHuman];
+        
+        
+        //maincode
     //[human jobCycle: array];
-    
     //[human jobCycleReturn: array];
     
 // совершенно непонятная функция. Непонятно что делает, непонятно что передавать вторым аргументом. Неогбходимо переназвать, осбенно уделить внимание второму аргументу
@@ -89,6 +106,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
+    
+    
 @end
+
+

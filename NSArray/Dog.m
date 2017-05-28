@@ -20,6 +20,7 @@ const NSString* kColorDog = @"Black";
     {
         self.color = kColorDog;
         self.size = SizeAnimalBig;
+        self.animalName = @"dogName";
     }
     
     return self;
