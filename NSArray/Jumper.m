@@ -9,21 +9,22 @@
 #import "Jumper.h"
 
 
+static const NSString *kNameJumper = @"defaultJumperName";
+static const NSString *kLastName = @"defaultLastName";
+
 @implementation Jumper
 
-// также
-#pragma mark - const
-const NSString *kNameJumper = @"defaultJumperName";
-const NSString *kLastName = @"defaultLastName";
+
+
 
 @synthesize lastName = m_lastName;
 
-//пробел
--(instancetype) init
+//пробел ++
+- (instancetype) init
 {
     self = [super init];
-//пробелы
-    if(self!=nil)
+//пробелы++
+    if (self != nil)
     {
         
         self.name = kNameJumper;

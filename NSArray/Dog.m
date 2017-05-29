@@ -8,10 +8,12 @@
 
 #import "Dog.h"
 
+ static const NSString* kColorDog = @"Black";
+
+
+
 @implementation Dog
 
-// также как в анимал лучше сделать статик
-const NSString* kColorDog = @"Black";
 
 - (instancetype) init
 {

@@ -7,34 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ItsALive.h"
 
-// тут тоже переделай как в анимал
-typedef enum
+// тут тоже переделай как в анимал // +
+
+typedef NS_ENUM(NSUInteger , Gender)
 {
-    genderMale, 
-    genderFamele
-}Gender;
+    genderMale,
+    genderFamale
+};
 
-@interface Human: NSObject
+@interface Human: ItsALive
 
-// nullable параметр
-@property (nonatomic, strong) NSString* name;
+// nullable параметр //+
+@property (nullable, nonatomic, strong) NSString* name;
 @property (nonatomic, assign) Gender gender;
 @property (nonatomic, assign) double weight;
 @property (nonatomic, assign) float grouth;
 
 
-- (void) movement;
 
 
+- (NSString *) convertToString: (Gender) whatGender;
 
-- (NSString*) convertToString: (Gender) whatGender;
-
-- (void) jobCycleReturn: (NSArray*) array;
-
-- (void) jobCycle: (NSArray*) array;
-
-- (void) outputInTurnOfObjectsFromArray: (NSArray*) array
-                              nextArray: (NSArray*) arrayAnmal;
 
 @end

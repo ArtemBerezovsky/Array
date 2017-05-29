@@ -8,10 +8,11 @@
 
 #import "Cat.h"
 
+
+static const NSString* kColorCat = @"Grey";
+
 @implementation Cat
 
-// смотри сюда))
-const NSString* kColorCat = @"Grey";
 
 - (instancetype) init
 {

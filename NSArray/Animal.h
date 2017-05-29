@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ItsALive.h"
 
 typedef NS_ENUM (NSUInteger, SizeAnimal)
 {
@@ -16,18 +16,16 @@ typedef NS_ENUM (NSUInteger, SizeAnimal)
     SizeAnimalDefault
 };
 
-@interface Animal: NSObject
+@interface Animal: ItsALive
 
-//  nullable лучше писать самым первым, но не обязательно
-@property (nonatomic, strong, nullable) NSString *color;
+
+@property (nullable,nonatomic, strong) NSString *color;
 @property (nonatomic, assign) SizeAnimal size;
 @property (nonatomic, strong , nullable) NSString *animalName;
 
 
-// пробел после минуса
-- (void) movementAnimal;
 
 // пробел после NSString
-- (NSString*) convertToStringAnimal: (SizeAnimal) whatAnimal;
+- (NSString *) convertToStringAnimal: (SizeAnimal) whatAnimal;
 
 @end

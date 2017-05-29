@@ -9,7 +9,7 @@
 #import "Animal.h"
 
 
-static const NSString* kColor = @"defautlColor";
+static const NSString *kColor = @"defautlColor";
 
 
 @implementation Animal
@@ -37,19 +37,19 @@ static const NSString* kColor = @"defautlColor";
     NSString *result = nil;
     switch(whatAnimal)
     {
-//  тут двоеточие слитно (у case принято так)
-        case SizeAnimalBig :
+//  тут двоеточие слитно (у case принято так) исправлено
+        case SizeAnimalBig:
         {
             result = @"BIG";
             break;
         }
            
-        case SizeAnimalSmall :
+        case SizeAnimalSmall:
         {
             result = @"Small";
             break;
         }
-        default :
+        default:
         {
             result = @"defaultSize";
         }

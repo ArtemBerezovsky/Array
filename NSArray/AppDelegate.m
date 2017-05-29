@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Creator.h"
 #import "Human.h"
 #import "Cyclist.h"
 #import "Runner.h"
@@ -15,7 +16,7 @@
 #import "Animal.h"
 #import "Dog.h"
 #import "Cat.h"
-
+#import "LordOfArrays.h"
 
 @interface AppDelegate ()
 
@@ -27,55 +28,65 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     //initilization Human
-// Правильно писать ТИП_ПЕРЕМЕННОЙ *ИМЯ_ПЕРЕМЕННОЙ (знак указателя приписывается переменной, а не типу)
-    Human *human = [[Human alloc] init];
-    Cyclist *cyclist = [[Cyclist alloc] init];
-    Runner *runner = [[Runner alloc] init];
-    Swimmer *swimmer = [[Swimmer alloc] init];
-    swimmer.grouth = 66.66;
-    Jumper *jumper = [[Jumper alloc] init];
-    
- 
+// Правильно писать ТИП_ПЕРЕМЕННОЙ *ИМЯ_ПЕРЕМЕННОЙ (знак указателя приписывается переменной, а не типу)//++
+    Creator *creatorForArray = [[Creator alloc] init];
     
     
-    //initilization Animal
-    Dog *dog = [[Dog alloc] init];
-    Cat *cat = [[Cat alloc] init];
-    
+    //initilization support
+    LordOfArrays *lordOfArrays = [[LordOfArrays alloc] init];
 
-    NSArray *array = [NSArray arrayWithObjects: human, cyclist, runner, swimmer, jumper, nil];
-    NSArray *arrayAnimal = [NSArray arrayWithObjects: dog, cat, nil];
-// пробел
-    NSMutableArray *arrayAll = [NSMutableArray arrayWithObjects:human, cyclist, runner, jumper, swimmer, cat, dog, nil];
+    NSArray <Human *> *array= [NSArray arrayWithObjects: creatorForArray.human,
+                                                         creatorForArray.jumper,
+                                                         creatorForArray.runner,
+                                                         creatorForArray.swimmer,
+                                                         nil];
+    NSArray <Animal *> *arrayAnimal = [NSArray arrayWithObjects: creatorForArray.dog, creatorForArray.cat, nil];
+// пробел//++
+    NSMutableArray *arrayAll = [NSMutableArray arrayWithObjects:
+                                creatorForArray.human,
+                                creatorForArray.jumper,
+                                creatorForArray.runner,
+                                creatorForArray.swimmer,
+                                creatorForArray.dog,
+                                creatorForArray.cat,
+                                nil];
     NSMutableArray *arrayAnimalForSort = [[NSMutableArray alloc] init];
     NSMutableArray *arrayHumanForSort = [[NSMutableArray alloc] init];
     
+    
+    [lordOfArrays outputInTurnOfObjectsFromArray:array
+                                       nextArray: arrayAnimal];
+    
+    
+    
+    
 // фигурные скобки как везде
-    for (id object in arrayAll) {
-        if ([object isKindOfClass:[Animal class]]) {
+    for (id object in arrayAll)
+    {
+        if ([object isKindOfClass:[Animal class]])
+        {
             [arrayAnimalForSort addObject:object];
-        }else if([object isKindOfClass:[Human class]]){
+        }
+        else if([object isKindOfClass:[Human class]])
+        {
             [arrayHumanForSort addObject:object];
         }
-        
-        NSSortDescriptor *humanDescriptor = [NSSortDescriptor sortDescriptorWithKey: @"name"
-                                                                          ascending: YES
-// пробелы поправь, два убрать, один добавить
-                                                                           selector:@selector (localizedCaseInsensitiveCompare: )];
-        NSArray *descriptor = [NSArray arrayWithObjects: humanDescriptor, nil];
-        NSArray *arraySortedHuman = [arrayHumanForSort sortedArrayUsingDescriptors: descriptor];
-// пробел
-        [human jobCycle:arraySortedHuman];
-// падало потому что не было вот этой фигурной скобки ниже
     }
+    
+    NSSortDescriptor *humanDescriptor = [NSSortDescriptor sortDescriptorWithKey: @"name"
+                                                                      ascending: YES
+                                                                       selector: @selector (localizedCaseInsensitiveCompare: )];
+    
+        NSArray *descriptorArray = [NSArray arrayWithObjects: humanDescriptor, nil];
+        NSArray *arraySortedHuman = [arrayHumanForSort sortedArrayUsingDescriptors: descriptorArray];
+
+       // [human jobCycle: arraySortedHuman];
+
+  
     
         //maincode
     //[human jobCycle: array];
     //[human jobCycleReturn: array];
-    
-    [human outputInTurnOfObjectsFromArray: array
-                                nextArray: arrayAnimal];
-    
     
     
     

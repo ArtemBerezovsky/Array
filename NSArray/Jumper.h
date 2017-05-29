@@ -13,10 +13,7 @@
 
 @interface Jumper : Human
 
-@property (nonatomic, strong) NSString* lastName;
-
-
-
+@property (nullable, nonatomic, strong) NSString *lastName;
 
 
 @end

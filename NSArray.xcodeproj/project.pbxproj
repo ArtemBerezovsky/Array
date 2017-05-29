@@ -10,6 +10,8 @@
 		8419BC4E1ED03BC700539807 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419BC4D1ED03BC700539807 /* Animal.m */; };
 		8419BC531ED03C0D00539807 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419BC521ED03C0D00539807 /* Dog.m */; };
 		8419BC561ED03C1A00539807 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419BC551ED03C1A00539807 /* Cat.m */; };
+		845726E91EDAE7CD00FD8BF2 /* ItsALive.m in Sources */ = {isa = PBXBuildFile; fileRef = 845726E81EDAE7CD00FD8BF2 /* ItsALive.m */; };
+		845726EC1EDAEB5900FD8BF2 /* LordOfArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 845726EB1EDAEB5900FD8BF2 /* LordOfArrays.m */; };
 		846F401D1ECF151E00EC5D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F401C1ECF151E00EC5D78 /* main.m */; };
 		846F40201ECF151E00EC5D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F401F1ECF151E00EC5D78 /* AppDelegate.m */; };
 		846F40231ECF151E00EC5D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F40221ECF151E00EC5D78 /* ViewController.m */; };
@@ -31,6 +33,10 @@
 		8419BC521ED03C0D00539807 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		8419BC541ED03C1A00539807 /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		8419BC551ED03C1A00539807 /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		845726E71EDAE7CD00FD8BF2 /* ItsALive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItsALive.h; sourceTree = "<group>"; };
+		845726E81EDAE7CD00FD8BF2 /* ItsALive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItsALive.m; sourceTree = "<group>"; };
+		845726EA1EDAEB5900FD8BF2 /* LordOfArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LordOfArrays.h; sourceTree = "<group>"; };
+		845726EB1EDAEB5900FD8BF2 /* LordOfArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LordOfArrays.m; sourceTree = "<group>"; };
 		846F40181ECF151D00EC5D78 /* NSArray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSArray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846F401C1ECF151E00EC5D78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		846F401E1ECF151E00EC5D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +102,17 @@
 			name = Animal;
 			sourceTree = "<group>";
 		};
+		845726EE1EDAEB6F00FD8BF2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				845726EA1EDAEB5900FD8BF2 /* LordOfArrays.h */,
+				845726EB1EDAEB5900FD8BF2 /* LordOfArrays.m */,
+				846F40471ECF2F9700EC5D78 /* Creator.h */,
+				846F40481ECF2F9700EC5D78 /* Creator.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		846F400F1ECF151C00EC5D78 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +132,9 @@
 		846F401A1ECF151D00EC5D78 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
+				845726E71EDAE7CD00FD8BF2 /* ItsALive.h */,
+				845726E81EDAE7CD00FD8BF2 /* ItsALive.m */,
+				845726EE1EDAEB6F00FD8BF2 /* Support */,
 				8419BC501ED03BE700539807 /* Animal */,
 				8419BC4F1ED03BCF00539807 /* Human */,
 				846F401E1ECF151E00EC5D78 /* AppDelegate.h */,
@@ -125,8 +145,6 @@
 				846F40271ECF151E00EC5D78 /* Assets.xcassets */,
 				846F40291ECF151E00EC5D78 /* LaunchScreen.storyboard */,
 				846F402C1ECF151E00EC5D78 /* Info.plist */,
-				846F40471ECF2F9700EC5D78 /* Creator.h */,
-				846F40481ECF2F9700EC5D78 /* Creator.m */,
 				846F401B1ECF151D00EC5D78 /* Supporting Files */,
 			);
 			path = NSArray;
@@ -219,6 +237,8 @@
 				846F40201ECF151E00EC5D78 /* AppDelegate.m in Sources */,
 				846F40491ECF2F9700EC5D78 /* Creator.m in Sources */,
 				846F401D1ECF151E00EC5D78 /* main.m in Sources */,
+				845726E91EDAE7CD00FD8BF2 /* ItsALive.m in Sources */,
+				845726EC1EDAEB5900FD8BF2 /* LordOfArrays.m in Sources */,
 				846F40371ECF15E300EC5D78 /* Human.m in Sources */,
 				8419BC4E1ED03BC700539807 /* Animal.m in Sources */,
 				84FCBEA21ED01F4700FCBA5E /* Jumper.m in Sources */,

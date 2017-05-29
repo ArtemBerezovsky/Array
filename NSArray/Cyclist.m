@@ -8,18 +8,19 @@
 
 #import "Cyclist.h"
 
+static const NSString *kNameCyclest = @"defaultCyclystName";
+
+
 @implementation Cyclist
 
-//также
-const NSString* kNameCyclest = @"defaultCyclystName";
+
 
 - (instancetype) init
 {
     self = [super init];
-// пробелы
-    if(self!=nil)
+// пробелы//++
+    if (self != nil)
     {
-    
         self.name = kNameCyclest;
         self.weight = 2;
         self.grouth = 2;
@@ -29,8 +30,8 @@ const NSString* kNameCyclest = @"defaultCyclystName";
     return self;
 }
 
-//пробел
--(void) movement
+//пробел//++
+- (void) movement
 {
     NSLog(@"Movenment Cyclist");
 }

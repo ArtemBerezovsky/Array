@@ -12,13 +12,21 @@
 @class Cyclist;
 @class Runner;
 @class Swimmer;
+@class Jumper;
+@class Dog;
+@class Cat;
+
 
 @interface Creator : NSObject
 
-@property (nonatomic, strong) Human* human;
-@property (nonatomic, strong) Cyclist* cyclist;
-@property (nonatomic, strong) Runner* runner;
-@property(nonatomic, strong) Swimmer* swimmer;
+@property (nullable, nonatomic, strong, readonly) Human *human;
+@property (nullable, nonatomic, strong, readonly) Cyclist *cyclist;
+@property (nullable, nonatomic, strong, readonly) Runner *runner;
+@property (nullable, nonatomic, strong, readonly) Swimmer *swimmer;
+@property (nullable, nonatomic, strong, readonly) Jumper *jumper;
+@property (nullable, nonatomic, strong, readonly) Dog *dog;
+@property (nullable, nonatomic, strong, readonly) Cat *cat;
+
 
 
 @end
