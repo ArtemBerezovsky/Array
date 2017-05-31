@@ -14,12 +14,14 @@
 - (void) jobCycle: (NSArray *) array
 
 {
+// вертикальная разметка (поправь отступ). Пробелы
        for(NSInteger i = 0; i<array.count; i++)
     {
         
         ItsALive *itsAlive = [array objectAtIndex: i];
         if ([itsAlive isKindOfClass:[Human class]])
         {
+// зачем делать работу дважды? у тебя уже получен элемент по индексу. Приведи его к нужному типу. поправить везде
             Human *human = [array objectAtIndex: i];
             NSLog(@"THIS IS HUMAN!!!");
             NSLog(@"name %@", human.name);
@@ -51,6 +53,7 @@
 - (void) outputInTurnOfObjectsFromArray: (NSArray *) array
                               nextArray: (NSArray *) nextArray
 {
+// выставить  значение можно в той же строке. Исправить.
     NSInteger maxCount;
     NSInteger minCount;
     maxCount = NSNotFound;
@@ -65,7 +68,7 @@
         {
             ItsALive *arrayObjectItsAlive = [array objectAtIndex: i];
             if ([arrayObjectItsAlive isKindOfClass: [Human class]])
-                
+// лишняя линия. Поправить везде
             {
                 Human *human = [array objectAtIndex: i];
                 NSLog(@"THIS IS HUMAN!!!");
@@ -82,12 +85,15 @@
                     NSLog(@"size %@", [animal convertToStringAnimal: (SizeAnimal)animal.size]);
                     [animal movementAnimal];
                 }
+// скобка ниже смещена
               }
         }
+// лишний пробел перед точкой с запятой
         for (NSInteger j = maxCount - minCount ; j < maxCount; j++)
         {
             ItsALive *arrayObjectItsAlive = [array objectAtIndex: j];
             if ([arrayObjectItsAlive isKindOfClass: [Human class]])
+// весь блок ниже смещен вправо. Исправить
                 {
                     Human *human = [array objectAtIndex: j];
                     NSLog(@"THIS IS HUMAN!!!");
@@ -95,6 +101,7 @@
                     NSLog(@"weight %f", human.weight);
                     NSLog(@"grouth %f", human.grouth);
                     NSLog(@"gender %@", [human convertToString: (Gender)human.gender]);
+                    
                 }
         }
             
@@ -103,8 +110,10 @@
     {
         maxCount = nextArray.count;
         minCount = array.count;
+// пробелы
         for (NSInteger i =0; i< minCount; i++)
         {
+// весь блок ниже смещен вправо. Исправить
                 ItsALive *arrayObjectItsAlive = [array objectAtIndex: i];
                 if ([arrayObjectItsAlive isKindOfClass: [Human class]])
                 {
@@ -125,6 +134,7 @@
                     }
                 }
         }
+// много лишних пробьелов
         for (NSInteger j =  maxCount - minCount ; j < maxCount; j++)
         {
             ItsALive *nextArrayObjectItsAlive = [nextArray objectAtIndex: j];
@@ -138,16 +148,11 @@
             }
         }
     }
-    
 }
 
-
-
-
-// пробел//++
 - (void) jobCycleReturn: (NSArray *) array
 {
-    // пробелы, каунт через точку//++
+// пробелы. смотри еще раз
     for (NSInteger i = array.count-1; i >= 0; i--)
     {
         Human *human = [array objectAtIndex: i];
@@ -155,17 +160,10 @@
         NSLog(@"name %@", human.name);
         NSLog(@"weight %f", human.weight);
         NSLog(@"grouth %f", human.grouth);
-        // лишний пробел после приведения типов//++
         NSLog(@"gender %@", [human convertToString: (Gender)human.gender]);
         NSLog(@"index = %lu", (unsigned long)[array indexOfObject: human]);
         [human movement];
     }
-    
 }
-
-
-
-
-
 
 @end

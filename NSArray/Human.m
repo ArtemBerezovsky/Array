@@ -19,7 +19,7 @@ static const NSString *kName = @"defaultHumanName";
     self = [super init];
     if(self!=nil)
     {
-        //Аналагично Animal
+        //Аналогично Animal
         _name = kName;
         _weight = 67.9;
         _grouth = 1.99;

@@ -10,22 +10,20 @@
 
 @implementation Swimmer
 
-//также
+//также! Пропущено!!!
 const NSString *kNameSwimmer = @"defaultSwimmerName";
 
 
 - (instancetype) init
 {
     self = [super init];
-//пробелы
+//пробелы. Пропущено!!!
     if(self != nil)
     {
-        
         self.name = kNameSwimmer;
         self.weight = 4;
         self.grouth = 4;
         self.gender = genderFamale;
-        
     }
     return self;
 }

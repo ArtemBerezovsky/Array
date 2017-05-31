@@ -15,7 +15,7 @@
 @interface LordOfArrays : NSObject
 
 
-
+//  Ну а теперь займемся массивами. у всех массивов укажи тип элементов (NSArray <TYPE> *)
 - (void) jobCycleReturn: (NSArray *) array;
 
 - (void) jobCycle: (NSArray *) array;

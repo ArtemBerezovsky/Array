@@ -28,20 +28,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     //initilization Human
-// Правильно писать ТИП_ПЕРЕМЕННОЙ *ИМЯ_ПЕРЕМЕННОЙ (знак указателя приписывается переменной, а не типу)//++
     Creator *creatorForArray = [[Creator alloc] init];
     
     
     //initilization support
     LordOfArrays *lordOfArrays = [[LordOfArrays alloc] init];
 
+// пробел. После исправления поправить вертикальную верстку
     NSArray <Human *> *array= [NSArray arrayWithObjects: creatorForArray.human,
                                                          creatorForArray.jumper,
                                                          creatorForArray.runner,
                                                          creatorForArray.swimmer,
                                                          nil];
     NSArray <Animal *> *arrayAnimal = [NSArray arrayWithObjects: creatorForArray.dog, creatorForArray.cat, nil];
-// пробел//++
+
+// помести первый элемент в ту же строку, где создается элемент. Все остальные выравни по нему. Если маленький экран, попробуй уменьшить размер букв через настройки.
     NSMutableArray *arrayAll = [NSMutableArray arrayWithObjects:
                                 creatorForArray.human,
                                 creatorForArray.jumper,
@@ -53,16 +54,13 @@
     NSMutableArray *arrayAnimalForSort = [[NSMutableArray alloc] init];
     NSMutableArray *arrayHumanForSort = [[NSMutableArray alloc] init];
     
-    
+// пробел
     [lordOfArrays outputInTurnOfObjectsFromArray:array
                                        nextArray: arrayAnimal];
     
-    
-    
-    
-// фигурные скобки как везде
     for (id object in arrayAll)
     {
+// пробелы в этом блоке. 5 штук
         if ([object isKindOfClass:[Animal class]])
         {
             [arrayAnimalForSort addObject:object];
@@ -76,7 +74,7 @@
     NSSortDescriptor *humanDescriptor = [NSSortDescriptor sortDescriptorWithKey: @"name"
                                                                       ascending: YES
                                                                        selector: @selector (localizedCaseInsensitiveCompare: )];
-    
+// вертикальная разметка
         NSArray *descriptorArray = [NSArray arrayWithObjects: humanDescriptor, nil];
         NSArray *arraySortedHuman = [arrayHumanForSort sortedArrayUsingDescriptors: descriptorArray];
 

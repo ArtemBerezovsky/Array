@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ItsALive.h"
 
-// тут тоже переделай как в анимал // +
-
 typedef NS_ENUM(NSUInteger , Gender)
 {
     genderMale,
@@ -19,7 +17,7 @@ typedef NS_ENUM(NSUInteger , Gender)
 
 @interface Human: ItsALive
 
-// nullable параметр //+
+// указатель не на своем месте
 @property (nullable, nonatomic, strong) NSString* name;
 @property (nonatomic, assign) Gender gender;
 @property (nonatomic, assign) double weight;
@@ -27,7 +25,7 @@ typedef NS_ENUM(NSUInteger , Gender)
 
 
 
-
+//смотри анимал
 - (NSString *) convertToString: (Gender) whatGender;
 
 

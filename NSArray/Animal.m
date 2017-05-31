@@ -8,7 +8,7 @@
 
 #import "Animal.h"
 
-
+// для NSString пишут в таокм порядке static NSString *const ИМЯ_ПЕРЕМЕННОЙ. Поправить везде.
 static const NSString *kColor = @"defautlColor";
 
 
@@ -18,11 +18,10 @@ static const NSString *kColor = @"defautlColor";
 - (instancetype) init
 {
     self = [super init];
+// пробел. проверить и поправить везде
     if(self != nil)
     {
-// Ошибка слева указатель несозданный до этого, а справа значение. Значение не будет сохранено, сначала создай объект, а потом присвой его указателю
-// не понял нифига в чем ошибка, как я могу создать объект если я его создаю с помощью этого инита с параметрами свойств?на счет варнинга с этими страками не въезжаю.
-// Проблема в том, что у тебя один объект, и на него ссылаются все созданные объекты этого класса. Вместо просто переменной создай NSString с этой строкой
+// неисправлено!!! Создать объект и присвоить!!! Исправить везде
         _color = kColor;
         _size = SizeAnimalDefault;
         _animalName = @"defaultName";
@@ -31,13 +30,13 @@ static const NSString *kColor = @"defautlColor";
     return self;
 }
 
-// Пробел после типа (NSString)
+// Пробел после типа (NSString) Неисправлено!
 - (NSString*) convertToStringAnimal: (SizeAnimal) whatAnimal
 {
     NSString *result = nil;
+// пробел
     switch(whatAnimal)
     {
-//  тут двоеточие слитно (у case принято так) исправлено
         case SizeAnimalBig:
         {
             result = @"BIG";

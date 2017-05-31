@@ -25,7 +25,7 @@ typedef NS_ENUM (NSUInteger, SizeAnimal)
 
 
 
-// пробел после NSString
+// варнинг утверждает, что необходимо знать. Может ли NSString быть нулевым или нет. укажи идентификатор nullability(nonnull/nullable) перед NSString
 - (NSString *) convertToStringAnimal: (SizeAnimal) whatAnimal;
 
 @end

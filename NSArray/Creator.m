@@ -27,6 +27,7 @@
 
 - (instancetype) init
 {
+// в методе пропущено 3 пробела
     self = [super init];
     if(self != nil)
     {
@@ -37,7 +38,6 @@
         m_jumper = [[Jumper alloc]init];
         m_dog = [[Dog alloc] init];
         m_cat = [[Cat alloc]init];
-        
     }
     return self;
 }

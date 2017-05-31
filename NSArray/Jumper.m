@@ -19,14 +19,11 @@ static const NSString *kLastName = @"defaultLastName";
 
 @synthesize lastName = m_lastName;
 
-//пробел ++
 - (instancetype) init
 {
     self = [super init];
-//пробелы++
     if (self != nil)
     {
-        
         self.name = kNameJumper;
         self.weight = 5;
         self.grouth = 5;

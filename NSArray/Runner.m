@@ -10,22 +10,19 @@
 
 @implementation Runner
 
-//также
+//также! Пропущено!!!
 const NSString *kNameRunner = @"defaultRunnerName";
 
 
 - (instancetype) init
 {
     self = [super init];
-//пробелы
     if (self != nil)
     {
-        
         self.name = kNameRunner;
         self.weight = 3;
         self.grouth = 3;
         self.gender = genderMale;
-        
     }
     return self;
 }
